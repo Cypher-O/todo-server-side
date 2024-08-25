@@ -1,6 +1,6 @@
-# Contributing to Media Chat API
+# Contributing to Todo API
 
-First of all, thank you for considering contributing to the Chat API! Contributions from developers like you are what make this project great.
+First of all, thank you for considering contributing to the Todo API! Contributions from developers like you are what make this project great.
 
 ## Code of Conduct
 
@@ -10,7 +10,7 @@ Before you start contributing, please read and adhere to our [Code of Conduct](C
 
 ### Reporting Bugs
 
-If you encounter a bug in the application or have a feature request, please open an issue on the [issue tracker](https://github.com/Cypher-O/chat-api/issues). When reporting bugs, please include steps to reproduce the issue and any relevant details about your environment.
+If you encounter a bug in the application or have a feature request, please open an issue on the [issue tracker](https://github.com/Cypher-O/todo-server-side/issues). When reporting bugs, please include steps to reproduce the issue and any relevant details about your environment.
 
 ### Submitting Changes
 
@@ -19,8 +19,8 @@ If you have implemented a bug fix or added a new feature that you would like to 
 1. Fork the repository and create your branch from `master`.
 
     ```bash
-    git clone https://github.com/Cypher-O/chat-api.git
-    cd chat-api
+    git clone https://github.com/Cypher-O/todo-server-side.git
+    cd todo-server-side
     git checkout -b my-contribution
     ```
 
