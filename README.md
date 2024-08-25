@@ -1,64 +1,49 @@
-# About chat API
+# About Todo API
 
-This project is a RESTful API built with Node.js, Express, and PostgreSQL, utilizing Neon for database management. It provides functionalities for user management and messaging, including user registration, login, OTP generation & verification, and conversation handling.
+This project is a RESTful API built with Node.js, Express, and PostgreSQL, utilizing Neon for database management. It provides functionalities for user authentication and task management, including user registration, login, and CRUD operations for tasks.
 
 ## Features
 
 - **User Management**: Create and authenticate users, handle user registration, and log in.
-- **OTP Handling**: Generate and verify OTPs for user verification.
-- **Messaging**: Send and receive messages using WebSocket for real-time communication.
-- **Conversation History**: Fetch and manage conversation history between users.
+- **Task Management**: Create, read, update, and delete tasks for authenticated users.
+- **API Documentation**: Swagger UI for easy API exploration and testing.
 
 ## API Endpoints
 
-### User Endpoints
+### Authentication Endpoints
 
-- **POST /register**
-  - Register a new user with `username`, `email`, `password`, `firstName`, `lastName`, and `phoneNumber`.
+- **POST /auth/register**
+  - Register a new user.
   - Returns a token upon successful registration.
 
-- **POST /login**
-  - Log in with `username` and `password`.
+- **POST /auth/login**
+  - Log in with credentials.
   - Returns a token upon successful login.
 
-- **GET /me**
-  - Retrieve the current user's data based on the provided token.
+### Task Endpoints
 
-### OTP Endpoints
+- **GET /tasks**
+  - Fetch all tasks for the authenticated user.
 
-- **POST /send-otp**
-  - Send an OTP to a phone number.
-  - Requires `phoneNumber` in the request body.
+- **POST /tasks**
+  - Create a new task for the authenticated user.
 
-- **POST /verify-otp**
-  - Verify the OTP sent to a phone number.
-  - Requires `phoneNumber` and `otp` in the request body.
+- **GET /tasks/:id**
+  - Fetch a specific task by ID.
 
-### Messaging Endpoints
+- **PUT /tasks/:id**
+  - Update a specific task by ID.
 
-- **GET /conversations/:userId**
-  - Fetch conversation history between the current user and the specified `userId`.
-
-- **GET /recent-conversations**
-  - Fetch recent conversations for the current user.
-
-- **POST /messages**
-  - Create and send a new message.
-  - Requires `recipientId` and `content` in the request body.
-
-## WebSocket
-
-- **WebSocket Endpoint**: `ws://localhost:3000/ws?token=YOUR_JWT_TOKEN`
-  - Send and receive messages in real-time.
-  - Messages should be sent as JSON objects with `recipientId` and `content`.
+- **DELETE /tasks/:id**
+  - Delete a specific task by ID.
 
 ## Installation
 
 1. Clone the repository:
 
     ```sh
-    git clone https://github.com/Cypher-O/chat-api.git
-    cd chat-api
+    git clone https://github.com/Cypher-O/todo-server-side.git
+    cd todo-server-side
     ```
 
 ## Set Up Environment Variables
@@ -70,9 +55,6 @@ This project is a RESTful API built with Node.js, Express, and PostgreSQL, utili
     PORT=your_port
     JWT_SECRET=your_jwt_secret
     DB_CONNECTION_STRING=your_database_connection_string
-    TWILIO_PHONE_NUMBER=your_registered_twilio_from_number
-    TWILIO_ACCOUNT_SID=your_twilio_account_sid
-    TWILIO_AUTH_TOKEN=your_twilio_auth_token
     ```
 
 ## Usage
