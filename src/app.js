@@ -48,14 +48,14 @@ app.use((err, req, res, next) => {
 app.use((req, res) => {
   res
     .status(404)
-    .sendFile(path.join(__dirname, 'src', 'views', '404', 'index.html'))
+    .sendFile(path.join(__dirname, 'views', '404', 'index.html'))
 })
 
 //500 handler
 app.use((req, res) => {
   res
     .status(500)
-    .sendFile(path.join(__dirname, 'src', 'views', '500', 'index.html'))
+    .sendFile(path.join(__dirname, 'views', '500', 'index.html'))
 })
 
 module.exports = app
