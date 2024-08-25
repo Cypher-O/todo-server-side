@@ -2,6 +2,11 @@
 
 This project is a RESTful API built with Node.js, Express, and PostgreSQL, utilizing Neon for database management. It provides functionalities for user authentication and task management, including user registration, login, and CRUD operations for tasks.
 
+## API Documentation
+
+Explore the full API documentation using Swagger UI:
+[Todo API Documentation](https://todo-server-side-0wob.onrender.com/api-docs)
+
 ## Features
 
 - **User Management**: Create and authenticate users, handle user registration, and log in.
