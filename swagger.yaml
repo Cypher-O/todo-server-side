@@ -1,6 +1,6 @@
 openapi: 3.0.0
 info:
-  title: Todo API with Authentication
+  title: Todo API
   version: 1.0.0
   description: API for managing todos with user authentication
 
