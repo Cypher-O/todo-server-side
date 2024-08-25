@@ -1,0 +1,36 @@
+{
+  "name": "todo-server-side",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "migrate": "node-pg-migrate",
+    "migrate:up": "node-pg-migrate up",
+    "migrate:down": "node-pg-migrate down",
+    "migrate:create": "node-pg-migrate create",
+    "build-css": "sass --no-source-map views/404/css/styles.scss public/styles.css && sass --no-source-map views/500/css/styles.scss public/500styles.css",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npm install && npm run migrate:up && npm run build-css",
+    "serve": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cypher-O/todo-server-side.git"
+  },
+  "author": "Olumide Awodeji",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-async-handler": "^1.2.0",
+    "jsonwebtoken": "^9.0.2",
+    "node-pg-migrate": "^7.6.1",
+    "nodemon": "^3.1.4",
+    "sass": "^1.77.8"
+  }
+}
