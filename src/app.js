@@ -19,7 +19,7 @@ app.use(express.static('public'));
 const swaggerDocument = YAML.load(path.join(__dirname, '../swagger.yaml'));
 
 // Serve custom CSS
-app.use('/swagger-ui.css', express.static(path.join(__dirname, 'custom.css')));
+app.use('/swagger-ui.css', express.static(path.join(__dirname, '../custom.css')));
 
 // Serve Swagger documentation with custom CSS
 const swaggerOptions = {
