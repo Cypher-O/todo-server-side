@@ -1,4 +1,4 @@
-const formatResponse = (code, status, message, data = null) => {
+const formatResponse = (code, status, message, data = {}) => {
     return {
       code,
       status,

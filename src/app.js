@@ -16,7 +16,7 @@ app.use(helmet());
 app.use(express.static('public'));
 
 // Load the YAML file
-const swaggerDocument = YAML.load(path.join(__dirname, 'swagger.yaml'));
+const swaggerDocument = YAML.load(path.join(__dirname, '../swagger.yaml'));
 
 // Serve custom CSS
 app.use('/swagger-ui.css', express.static(path.join(__dirname, 'custom.css')));
