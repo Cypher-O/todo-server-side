@@ -29,8 +29,8 @@ const swaggerOptions = {
 
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument, swaggerOptions));
 
-app.use('/auth', authRoutes)
-app.use('/tasks', taskRoutes)
+app.use('/api/auth', authRoutes)
+app.use('/api/tasks', taskRoutes)
 
 app.use(errorHandler)
 
