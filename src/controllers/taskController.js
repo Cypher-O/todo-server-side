@@ -1,11 +1,26 @@
 const asyncHandler = require('express-async-handler');
 const Task = require('../models/task');
+const User = require('../models/user');
 const formatResponse = require('../utils/responseFormatter');
 
 const getTasks = asyncHandler(async (req, res) => {
   try {
+    // Fetch the user's username
+    const user = await User.findById(req.user.id);
+    if (!user) {
+      return res.status(404).json(formatResponse(1, 'error', 'User not found'));
+    }
+
+    // Fetch all tasks for the user
     const tasks = await Task.getAll(req.user.id);
-    res.json(formatResponse(0, 'success', 'Tasks retrieved successfully', tasks));
+
+    // Construct the response with the username and tasks
+    const responseData = {
+      username: user.username,
+      tasks: tasks,
+    };
+
+    res.json(formatResponse(0, 'success', 'Tasks retrieved successfully', responseData));
   } catch (error) {
     console.error(error);
     res.status(500).json(formatResponse(1, 'error', 'An error occurred while retrieving tasks'));
