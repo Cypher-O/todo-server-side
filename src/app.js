@@ -7,6 +7,7 @@ const YAML = require('yamljs');
 const authRoutes = require('./routes/authRoutes')
 const taskRoutes = require('./routes/taskRoutes')
 const errorHandler = require('./middlewares/errorHandler')
+const db = require('./config/database');
 
 const app = express()
 
@@ -43,6 +44,14 @@ app.use((err, req, res, next) => {
     stack: process.env.NODE_ENV === 'production' ? '🥞' : err.stack
   })
 })
+
+setInterval(async () => {
+  const isHealthy = await db.healthCheck();
+  if (!isHealthy) {
+    console.error('Database connection is unhealthy. Taking corrective action...');
+    // Implement your corrective action here (e.g., notify admin, attempt reconnection)
+  }
+}, 60000); 
 
 // 404 handler
 app.use((req, res) => {

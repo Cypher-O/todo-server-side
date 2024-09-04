@@ -5,7 +5,7 @@ info:
   description: API for managing todos with user authentication
 
 servers:
-  - url: https://todo-server-side-0wob.onrender.com/api
+  - url: https://todo-server-side.cybercraftsmen.tech/api
 
 components:
   securitySchemes:
