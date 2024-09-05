@@ -20,9 +20,9 @@ const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
   ssl: {
     // In production, use proper SSL configuration
-    ca: fs.readFileSync('/etc/letsencrypt/live/cybercraftsmen.tech/chain.pem').toString(),
-    key: fs.readFileSync('/etc/letsencrypt/live/cybercraftsmen.tech/privkey.pem').toString(),
-    cert: fs.readFileSync('/etc/letsencrypt/live/cybercraftsmen.tech/cert.pem').toString(),
+    ca: fs.readFileSync('/home/cypher/certificates/chain.pem').toString(),
+    key: fs.readFileSync('/home/cypher/certificates/privkey.pem').toString(),
+    cert: fs.readFileSync('/home/cypher/certificates/cert.pem').toString(),
     rejectUnauthorized: true, // Only use this for development/testing
   },
   max: 20,
